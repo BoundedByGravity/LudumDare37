@@ -5,7 +5,7 @@ using UnityEngine;
 public class Handle : MonoBehaviour {
 
 	bool isOn = false;
-	bool stateChanging = true;
+	bool stateChanging = false;
 	float changeProgress = 0.0f;
 
 	Quaternion onRotation;
@@ -13,15 +13,14 @@ public class Handle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		onRotation = transform.localRotation;
-		Vector3 offRotationEuler = transform.localRotation.eulerAngles;		
-		offRotationEuler.y = 155;
-		offRotation = Quaternion.Euler(offRotationEuler);
+		offRotation = transform.localRotation;
+		Vector3 onRotationEuler = transform.localRotation.eulerAngles;		
+		onRotationEuler.y = 155;
+		onRotation = Quaternion.Euler(onRotationEuler);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void toggle() {
+		stateChanging = true;
 	}
 		
 	void FixedUpdate () {
@@ -36,7 +35,7 @@ public class Handle : MonoBehaviour {
 			if (changeProgress > 1f) {
 				changeProgress = 0f;
 				isOn = !isOn;
-				//stateChanging = false;
+				stateChanging = false;
 			}
 		}
 	}
