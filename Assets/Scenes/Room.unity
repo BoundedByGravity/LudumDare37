@@ -307,6 +307,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 99839201}
   m_Mesh: {fileID: 4300006, guid: f130774d31542934aab20eaf43dd8701, type: 3}
+--- !u!1001 &108362309
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_TagString
+      value: PlaneCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_Target
+      value: 
+      objectReference: {fileID: 410797249}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &110335468
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +437,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 110335468}
   m_Mesh: {fileID: 4300020, guid: f130774d31542934aab20eaf43dd8701, type: 3}
+--- !u!1 &121521281 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+  m_PrefabInternal: {fileID: 108362309}
 --- !u!1 &404317802
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +588,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -550,7 +612,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!54 &410797247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1083,7 +1145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!124 &705697364
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1902,7 +1964,7 @@ Transform:
   - {fileID: 1282149680}
   - {fileID: 1374830739}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347912437
 GameObject:
@@ -2097,9 +2159,10 @@ GameObject:
   - component: {fileID: 1422711779}
   - component: {fileID: 1422711778}
   - component: {fileID: 1422711784}
+  - component: {fileID: 1422711785}
   m_Layer: 0
   m_Name: FPSController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2325,7 +2388,7 @@ Transform:
   m_Children:
   - {fileID: 475791712}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1422711783
 MonoBehaviour:
@@ -2357,6 +2420,20 @@ MonoBehaviour:
   targetDirection: {x: 0, y: 0}
   targetCharacterDirection: {x: 0, y: 0}
   characterBody: {fileID: 0}
+--- !u!114 &1422711785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1422711777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a44d610489e4172b6ec2410a800863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plane: {fileID: 410797245}
+  player: {fileID: 1422711777}
+  planeCamera: {fileID: 121521281}
 --- !u!1 &1438274474
 GameObject:
   m_ObjectHideFlags: 0
