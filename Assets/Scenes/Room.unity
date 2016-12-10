@@ -1142,6 +1142,7 @@ GameObject:
   - component: {fileID: 1422711783}
   - component: {fileID: 1422711779}
   - component: {fileID: 1422711778}
+  - component: {fileID: 1422711784}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Untagged
@@ -1265,15 +1266,6 @@ MonoBehaviour:
   m_JumpSpeed: 10
   m_StickToGroundForce: 10
   m_GravityMultiplier: 2
-  m_MouseLook:
-    XSensitivity: 2
-    YSensitivity: 2
-    clampVerticalRotation: 1
-    MinimumX: -90
-    MaximumX: 90
-    smooth: 0
-    smoothTime: 5
-    lockCursor: 1
   m_UseFovKick: 1
   m_FovKick:
     Camera: {fileID: 0}
@@ -1393,6 +1385,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms: {fileID: 1321588524}
+--- !u!114 &1422711784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1422711777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d62817d935494c228f69e9e4d8683e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clampInDegrees: {x: 360, y: 180}
+  lockCursor: 0
+  sensitivity: {x: 2, y: 2}
+  smoothing: {x: 3, y: 3}
+  targetDirection: {x: 0, y: 0}
+  targetCharacterDirection: {x: 0, y: 0}
+  characterBody: {fileID: 0}
 --- !u!1 &1438274474
 GameObject:
   m_ObjectHideFlags: 0
