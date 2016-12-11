@@ -4052,7 +4052,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1098263183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0.883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2107393733}
@@ -4160,8 +4160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadeImg: {fileID: 413163635}
-  fadeInSpeed: 0.5
-  fadeOutSpeed: 1.5
 --- !u!4 &1538677415 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: ac706d03fd2fb49b2879419646810f53, type: 3}
