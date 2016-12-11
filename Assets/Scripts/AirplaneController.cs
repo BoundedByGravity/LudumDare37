@@ -25,7 +25,7 @@ public class AirplaneController: MonoBehaviour
 		float yaw = yawWeight * Input.GetAxis ("Horizontal");
 		float roll = rollWeight * Input.GetAxis ("Vertical");
 
-		GetComponent<AudioSource> ().pitch = -roll / 5 + throttle;
+		//GetComponent<AudioSource> ().pitch = -roll / 5 + throttle;
 
 		if (yaw == 0 && roll == 0)
 			GetComponent<Rigidbody> ().angularVelocity *= 0.95f;
