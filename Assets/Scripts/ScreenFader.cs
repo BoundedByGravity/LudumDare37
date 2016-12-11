@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class ScreenFader : MonoBehaviour
 {
 	public Image FadeImg;
-	public float fadeInSpeed = 0.5f;
-	public float fadeOutSpeed = 1.5f;
+	private float fadeInSpeed = 0.25f;
+	private float fadeOutSpeed = 0.5f;
 
 	void Awake()
 	{
@@ -55,7 +55,7 @@ public class ScreenFader : MonoBehaviour
 		FadeImg.color = color;
 		FadeImg.enabled = true;
 
-		while(FadeImg.color.a >= 0.05) {
+		while(FadeImg.color.a >= 0.02) {
 			FadeToClear();
 			yield return null;
 		}
@@ -70,7 +70,7 @@ public class ScreenFader : MonoBehaviour
 		FadeImg.color = color;
 		FadeImg.enabled = true;
 
-		while(FadeImg.color.a <= 0.95) {
+		while(FadeImg.color.a <= 0.98) {
 			FadeToOpaque();
 			yield return null;
 		}
