@@ -12,6 +12,7 @@ public class AirplaneController: MonoBehaviour {
 
 	//Set these 3 floats to the mass of the GetComponent<Rigidbody>() for sensitive controls
 	private float throttle = 0;
+	private float maxThrottle = 5;
 	//public Transform prop;
 	public Transform plane;
 	public AudioClip audiodisapointment;
@@ -26,7 +27,7 @@ public class AirplaneController: MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 	}
 	void OnDisable() {
-		rb.drag = 0;
+		//rb.drag = 0;
 	}
 	void FixedUpdate ()
 	{
@@ -70,12 +71,12 @@ public class AirplaneController: MonoBehaviour {
 		//prop.Rotate(Vector3.right * throttle * 200);
 
 		// Speed up the plane when using space
-		if (Input.GetKey (KeyCode.Space) && throttle < 1) throttle += 0.05f;
+		if (Input.GetKey (KeyCode.Space) && throttle < maxThrottle) throttle += 0.05f;
 		else if (throttle > 0) throttle -= 0.01f;
 
 		//Debug.Log (throttle);
 
 		// Let the plane get airborne
-		rb.drag = 50 * throttle + 5;
+		//rb.drag = 50 * throttle + 5;
 	}
 }

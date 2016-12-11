@@ -7,69 +7,75 @@ using UnityEngine.SceneManagement;
 public class ScreenFader : MonoBehaviour
 {
 	public Image FadeImg;
-	public float fadeSpeed = 1.5f;
-	public bool sceneStarting = true;
-
+	public float fadeInSpeed = 0.5f;
+	public float fadeOutSpeed = 1.5f;
 
 	void Awake()
 	{
 		FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
 	}
 
-	void Update()
-	{
-		// If the scene is starting...
-		if (sceneStarting)
-			// ... call the StartScene function.
-			StartScene();
+	void Start() {
+		StartScene();
 	}
-
 
 	void FadeToClear()
 	{
-		FadeToColor(Color.clear);
+		Color c = FadeImg.color;
+		c.a -= 0.1f * fadeInSpeed;
+		FadeImg.color = c;
+		// Lerp the colour of the image between itself and argument color.
+		//FadeImg.color = Color.Lerp(FadeImg.color, c, fadeOutSpeed * Time.deltaTime);
 	}
 
-	void FadeToColor(Color color)
+	void FadeToOpaque()
 	{
+		Color c = FadeImg.color;
+		c.a += 0.1f * fadeOutSpeed;
+		FadeImg.color = c;
 		// Lerp the colour of the image between itself and argument color.
-		FadeImg.color = Color.Lerp(FadeImg.color, color, fadeSpeed * Time.deltaTime);
+		//FadeImg.color = Color.Lerp(FadeImg.color, c, fadeInSpeed * Time.deltaTime);
 	}
 
 
 	void StartScene()
 	{
-		// Fade the texture to clear.
-		FadeToClear();
-
-		// If the texture is almost clear...
-		if (FadeImg.color.a <= 0.05f)
-		{
-			// ... set the colour to clear and disable the RawImage.
-			FadeImg.color = Color.clear;
-			FadeImg.enabled = false;
-
-			// The scene is no longer starting.
-			sceneStarting = false;
-		}
+		StartCoroutine (StartSceneRoutine (Color.white));
+	}
+	
+	public void EndScene(int SceneNumber)
+	{
+		StartCoroutine(EndSceneRoutine(SceneNumber, Color.white));
 	}
 
+	public IEnumerator StartSceneRoutine(Color color)
+	{
+		// Make sure the RawImage is enabled.
+		color.a = 1.0f;
+		FadeImg.color = color;
+		FadeImg.enabled = true;
+
+		while(FadeImg.color.a >= 0.05) {
+			FadeToClear();
+			yield return null;
+		}
+		color.a = 0.0f;
+		FadeImg.color = color;
+	}
 
 	public IEnumerator EndSceneRoutine(int SceneNumber, Color color)
 	{
 		// Make sure the RawImage is enabled.
+		color.a = 0.0f;
+		FadeImg.color = color;
 		FadeImg.enabled = true;
-		while(!((FadeImg.color - color).grayscale <= (Color.white * 0.05f).grayscale)) {
-			// Start fading towards black.
-			FadeToColor(color);
+
+		while(FadeImg.color.a <= 0.95) {
+			FadeToOpaque();
 			yield return null;
 		}
+		color.a = 1.0f;
+		FadeImg.color = color;
 		SceneManager.LoadScene(SceneNumber);
-	}
-
-	public void EndScene(int SceneNumber)
-	{
-		sceneStarting = false;
-		StartCoroutine(EndSceneRoutine(SceneNumber, Color.black));
 	}
 } 
