@@ -368,15 +368,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
       propertyPath: m_MoveSpeed
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
       propertyPath: m_TurnSpeed
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
       propertyPath: m_RollSpeed
-      value: 100
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_FollowVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_FollowTilt
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_SpinTurnLimit
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_TargetVelocityLowerLimit
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_SmoothTurnTime
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
