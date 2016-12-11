@@ -8,18 +8,23 @@ public class AirplaneController: MonoBehaviour
 	//of the controls, and to allow calibration for more massive ships.
 	private float yawWeight = 3;
 	//Set these 3 floats to the mass of the GetComponent<Rigidbody>() for sensitive controls
-
 	public static float throttle = 0;
 	public Transform prop, plane;
 	public AudioClip audiodisapointment;
 
+	void Start() {
+		enabled = false;
+	}
+	void OnDisable() {
+		GetComponent<Rigidbody> ().drag = 0;
+	}
 	void FixedUpdate ()
 	{
+		
 		// Get input axises
 		float yaw = yawWeight * Input.GetAxis ("Horizontal");
 		float roll = rollWeight * Input.GetAxis ("Vertical");
 
-		Vector3 Rotation = new Vector3 (roll, 0, -yaw);
 		GetComponent<AudioSource> ().pitch = -roll / 5 + throttle;
 
 		if (yaw == 0 && roll == 0)
