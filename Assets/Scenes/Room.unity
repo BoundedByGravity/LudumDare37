@@ -348,7 +348,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
       propertyPath: m_IsActive
@@ -362,6 +362,22 @@ Prefab:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 410797249}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_AutoTargetPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_MoveSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_TurnSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
+      propertyPath: m_RollSpeed
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6c918bdfd12a43afa7cebb8801f3b96, type: 2}
   m_IsPrefabParent: 0
@@ -2408,7 +2424,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1422711777}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d62817d935494c228f69e9e4d8683e5, type: 3}
   m_Name: 
@@ -2431,9 +2447,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a44d610489e4172b6ec2410a800863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plane: {fileID: 410797245}
-  player: {fileID: 1422711777}
+  planeController: {fileID: 410797245}
   planeCamera: {fileID: 121521281}
+  playerController: {fileID: 1422711777}
+  player: {fileID: 475791711}
 --- !u!1 &1438274474
 GameObject:
   m_ObjectHideFlags: 0
