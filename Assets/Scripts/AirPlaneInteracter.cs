@@ -30,7 +30,7 @@ public class AirPlaneInteracter : MonoBehaviour, Interactable {
 			planeController.GetComponent<AirplaneController> ().enabled = fly;
 		}
 
-		Debug.Log ("Flying: " + fly);
+		//Debug.Log ("Flying: " + fly);
 
 	}
 }

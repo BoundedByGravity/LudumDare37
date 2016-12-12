@@ -21,7 +21,7 @@ public class Portal : MonoBehaviour, Interactable {
 	}
 
 	public void Interact() {
-		GlobalStateController gsc = GameObject.Find ("GlobalState").GetComponent<GlobalStateController> ();
+		GlobalStateController gsc = GameObject.Find ("GlobalState(Clone)").GetComponent<GlobalStateController> ();
 		gsc.setLevel (gsc.getLevel() + 1);
 		ScreenFader sf = FindObjectOfType<ScreenFader> ();
 		if (gsc.getLevel () == 3) {

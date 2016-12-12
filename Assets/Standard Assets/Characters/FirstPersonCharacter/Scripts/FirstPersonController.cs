@@ -28,6 +28,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+		public GameObject globalStatePrefab;
+
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -42,6 +44,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+		private void Awake() {
+			//hacky time!
+			if (GameObject.Find ("GlobalState(Clone)") == null) {
+				Instantiate (globalStatePrefab);
+			}
+		}
+
         // Use this for initialization
         private void Start()
         {
@@ -55,6 +64,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			//m_MouseLook.Init(transform , m_Camera.transform);
+
+
         }
 
 

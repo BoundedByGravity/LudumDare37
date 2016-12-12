@@ -11,7 +11,12 @@ public class ShowWhenGameOver : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float alpha = 0.0f;
-		GlobalStateController gsc = GameObject.Find ("GlobalState").GetComponent<GlobalStateController> ();
+
+		GlobalStateController gsc;
+		GameObject gs;
+		gs = GameObject.Find ("GlobalState(Clone)");
+		gsc = gs.GetComponent<GlobalStateController> ();
+
 		if (gsc.gameIsOver()) {
 			alpha = 1.0f;
 		}
