@@ -43,9 +43,9 @@ public class ScreenFader : MonoBehaviour
 		StartCoroutine (StartSceneRoutine (Color.white));
 	}
 	
-	public void EndScene(int SceneNumber)
+	public void EndScene(int SceneNumber, bool endGame)
 	{
-		StartCoroutine(EndSceneRoutine(SceneNumber, Color.white));
+		StartCoroutine(EndSceneRoutine(SceneNumber, Color.white, endGame));
 	}
 
 	public IEnumerator StartSceneRoutine(Color color)
@@ -63,7 +63,7 @@ public class ScreenFader : MonoBehaviour
 		FadeImg.color = color;
 	}
 
-	public IEnumerator EndSceneRoutine(int SceneNumber, Color color)
+	public IEnumerator EndSceneRoutine(int SceneNumber, Color color, bool endGame)
 	{
 		// Make sure the RawImage is enabled.
 		color.a = 0.0f;
@@ -76,6 +76,10 @@ public class ScreenFader : MonoBehaviour
 		}
 		color.a = 1.0f;
 		FadeImg.color = color;
-		SceneManager.LoadScene(SceneNumber);
+		if (endGame) {
+			Debug.Log ("THE END");
+		} else {
+			SceneManager.LoadScene (SceneNumber);
+		}
 	}
 } 

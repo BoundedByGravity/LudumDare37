@@ -20,11 +20,8 @@ public class AirplaneController: MonoBehaviour {
 	private float yaw = 0;
 	private float roll = 0;
 
-	private Rigidbody rb;
-
 	void Start() {
 		enabled = false;
-		rb = GetComponent<Rigidbody> ();
 	}
 	void OnDisable() {
 		//rb.drag = 0;
