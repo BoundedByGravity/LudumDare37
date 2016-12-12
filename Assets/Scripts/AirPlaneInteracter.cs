@@ -18,11 +18,11 @@ public class AirPlaneInteracter : MonoBehaviour, Interactable {
 		fly = !fly;
 
 		if (!fly) {
-			player.transform.position = transform.position + new Vector3 (0, 2, 0);
-			planeCamera.gameObject.SetActive (fly);
-			planeController.GetComponent<AirplaneController> ().enabled = fly;
-			playerController.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController> ().enabled = !fly;
-			player.SetActive (!fly);
+//			player.transform.position = transform.position + new Vector3 (0, 2, 0);
+//			planeCamera.gameObject.SetActive (fly);
+//			planeController.GetComponent<AirplaneController> ().enabled = fly;
+//			playerController.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController> ().enabled = !fly;
+//			player.SetActive (!fly);
 		} else {
 			playerController.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController> ().enabled = !fly;
 			player.SetActive (!fly);
