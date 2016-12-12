@@ -76,4 +76,10 @@ public class AirplaneController: MonoBehaviour {
 		// Let the plane get airborne
 		//rb.drag = 50 * throttle + 5;
 	}
+
+	void OnCollisionEnter(Collision collision) {
+		if (collision.gameObject.name == "Portal") {
+			collision.gameObject.GetComponent<Portal> ().Interact ();
+		}
+	}
 }
