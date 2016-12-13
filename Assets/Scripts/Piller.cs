@@ -10,18 +10,19 @@ public class Piller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		rooms = GameObject.Find ("Room");
 		roomScale = 1;
 		currentRoomScale = 1;
 		speed = 2f;
 	}
 
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.E)) {
-			if (roomScale == 1)
-				roomScale = 100;
-			else if (roomScale == 100)
-				roomScale = 1;
-		}
+//		if (Input.GetKeyDown (KeyCode.E)) {
+//			if (roomScale == 1)
+//				roomScale = 100;
+//			else if (roomScale == 100)
+//				roomScale = 1;
+//		}
 
 		if (roomScale != currentRoomScale) {
 			// Scale rooms
@@ -47,6 +48,11 @@ public class Piller : MonoBehaviour {
 			Debug.Log (currentRoomScale);
 		}
 	}
+
+	public void makeSmall() {
+		roomScale = 100;
+	}
+		
 
 	void FixedUpdate () {
 		
