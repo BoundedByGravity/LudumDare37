@@ -12,6 +12,7 @@ public class InteractableSwitch : MonoBehaviour, Interactable {
 		gsc = gs.GetComponent<GlobalStateController> ();
 		if (gsc.getLevel () == 2) {
 			GameObject.Find ("FPSController").GetComponent<Piller> ().makeSmall ();
+			gsc.activateRocket ();
 		}
 		if (cooldown <= 0.0f) {
 			cooldown = 2.0f;

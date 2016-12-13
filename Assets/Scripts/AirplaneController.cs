@@ -46,7 +46,7 @@ public class AirplaneController: MonoBehaviour {
 			//Debug.Log ("Applying rot");
 			transform.Rotate (yaw, 0, -roll);
 		}
-		transform.Translate (0, 0, throttle / 20f);
+		transform.Translate (0, 0, throttle / 0.2f); //20f);
 
 
 
@@ -79,7 +79,7 @@ public class AirplaneController: MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.name == "Portal") {
-			collision.gameObject.GetComponent<Portal> ().Interact ();
+			collision.gameObject.GetComponent<Portal> ().end ();
 		}
 	}
 }

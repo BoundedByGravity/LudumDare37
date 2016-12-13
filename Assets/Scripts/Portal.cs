@@ -22,11 +22,9 @@ public class Portal : MonoBehaviour, Interactable {
 
 	public void Interact() {
 		GlobalStateController gsc = GameObject.Find ("GlobalState(Clone)").GetComponent<GlobalStateController> ();
+		if (gsc.getLevel() == 1) {
 		gsc.setLevel (gsc.getLevel() + 1);
 		ScreenFader sf = FindObjectOfType<ScreenFader> ();
-		if (gsc.getLevel () == 3) {
-			sf.EndScene (0, true);
-		} else {
 			sf.EndScene (0, false);
 		}
 	}
@@ -55,6 +53,14 @@ public class Portal : MonoBehaviour, Interactable {
 
 		active = !active;
 	}
+
+	public void end() {
+		GlobalStateController gsc = GameObject.Find ("GlobalState(Clone)").GetComponent<GlobalStateController> ();
+		gsc.setLevel (gsc.getLevel () + 1);
+		ScreenFader sf = FindObjectOfType<ScreenFader> ();
+		sf.EndScene (0, true);
+	}
+		
 		
 	void FixedUpdate () {
 		if (active) {
